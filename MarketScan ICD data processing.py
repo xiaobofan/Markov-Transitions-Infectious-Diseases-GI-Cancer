@@ -132,11 +132,11 @@ def main(input_directory, output_directory, disease_dict_path):
 if __name__ == "__main__":
     # Use argparse to get input arguments.
     parser = argparse.ArgumentParser(description="Process infectious disease data and save results.")
-    parser.add_argument("--input_directory", type=str, required=True, help="The directory containing the input files.")
+    parser.add_argument("--input_file", type=str, required=True, help="The input file containing infectious disease data (e.g., 'test data.txt').")
     parser.add_argument("--output_directory", type=str, required=True, help="The directory to save the output files.")
-    parser.add_argument("--disease_dict_path", type=str, required=True, help="The file path of the infectious disease dictionary.")
+    parser.add_argument("--disease_dict_path", type=str, required=True, help="The file path of the disease dictionary (e.g., 'Disease and Corresponding ICD-9 and ICD-10 Codes.txt').")
     args = parser.parse_args()
-
+    
     # Ensure the path exists.
     input_directory = Path(args.input_directory).resolve()
     output_directory = Path(args.output_directory).resolve()
